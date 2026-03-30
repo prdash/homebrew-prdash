@@ -3,8 +3,8 @@ class Prdash < Formula
 
   desc "Terminal dashboard for monitoring GitHub PRs requiring your attention"
   homepage "https://github.com/prdash/prdash"
-  url "https://files.pythonhosted.org/packages/source/p/prdash/prdash-0.1.0.tar.gz"
-  sha256 "PLACEHOLDER_SHA256"
+  url "https://files.pythonhosted.org/packages/eb/1e/fc7c7b712e05cc52b24da5f253a5bcf0c0c3b8992cdea242a952d1839e59/prdash_tui-0.1.0.tar.gz"
+  sha256 "984e766382e02c7fa0f2bc9ce35b94dc0bead87904eb76fed23615ac2dc7400c"
   license "MIT"
 
   depends_on "python@3.12"
