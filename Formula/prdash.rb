@@ -7,12 +7,18 @@ class Prdash < Formula
   sha256 "984e766382e02c7fa0f2bc9ce35b94dc0bead87904eb76fed23615ac2dc7400c"
   license "MIT"
 
+  head "https://github.com/prdash/prdash.git", branch: "main"
+
   depends_on "python@3.12"
 
   def install
     virtualenv_create(libexec, "python3.12")
     system libexec/"bin/python", "-m", "ensurepip"
-    system libexec/"bin/python", "-m", "pip", "install", "prdash-tui==#{version}"
+    if build.head?
+      system libexec/"bin/python", "-m", "pip", "install", buildpath
+    else
+      system libexec/"bin/python", "-m", "pip", "install", "prdash-tui==#{version}"
+    end
     bin.install_symlink Dir[libexec/"bin/prdash"]
   end
 
