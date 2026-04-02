@@ -10,7 +10,8 @@ class Prdash < Formula
   depends_on "python@3.12"
 
   def install
-    virtualenv_create(libexec, "python3.12", system_site_packages: false)
+    virtualenv_create(libexec, "python3.12")
+    system libexec/"bin/python", "-m", "ensurepip"
     system libexec/"bin/python", "-m", "pip", "install", "prdash-tui==#{version}"
     bin.install_symlink Dir[libexec/"bin/prdash"]
   end
